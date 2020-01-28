@@ -84,7 +84,7 @@ def process_usb_configuration(cpp_defines):
 
     elif "PIO_FRAMEWORK_ARDUINO_ENABLE_HID" in cpp_defines:
         env.Append(CPPDEFINES=["USBD_USE_HID_COMPOSITE"])
-        
+
     if any(f in env["CPPDEFINES"] for f in (
             "USBD_USE_CDC", "USBD_USE_HID_COMPOSITE")):
         env.Append(CPPDEFINES=["HAL_PCD_MODULE_ENABLED"])
@@ -177,8 +177,6 @@ env.Append(
         join(FRAMEWORK_DIR, "cores", "arduino", "stm32", "usb", "hid"),
         join(FRAMEWORK_DIR, "cores", "arduino", "stm32", "usb", "cdc"),
         join(FRAMEWORK_DIR, "libraries", "SrcWrapper", "src"),
-        join(FRAMEWORK_DIR, "libraries", "SrcWrapper", "src", "HAL"),
-        join(FRAMEWORK_DIR, "libraries", "SrcWrapper", "src", "LL"),
         join(FRAMEWORK_DIR, "libraries", "SrcWrapper", "src", "stm32"),
         join(FRAMEWORK_DIR, "libraries", "Wire", "src"),
         join(FRAMEWORK_DIR, "libraries", "Wire", "src", "utility"),
@@ -274,6 +272,10 @@ if "build.variant" in board:
         join("$BUILD_DIR", "FrameworkArduinoVariant"),
         variant_dir
     )
+
+env.BuildSources(
+    join("$BUILD_DIR", "FrameworkArduinoLibraries"),
+    join(FRAMEWORK_DIR, "libraries", "SrcWrapper"))
 
 env.BuildSources(
     join("$BUILD_DIR", "FrameworkArduino"),
