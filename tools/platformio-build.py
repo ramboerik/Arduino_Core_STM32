@@ -277,6 +277,7 @@ if "build.variant" in board:
 
 env.BuildSources(
     join("$BUILD_DIR", "FrameworkArduino"),
+    join(FRAMEWORK_DIR, "libraries"),
     join(FRAMEWORK_DIR, "cores", "arduino"))
 
 env.Prepend(LIBS=libs)
