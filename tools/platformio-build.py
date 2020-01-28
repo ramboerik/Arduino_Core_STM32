@@ -176,8 +176,6 @@ env.Append(
         join(FRAMEWORK_DIR, "cores", "arduino", "stm32", "usb"),
         join(FRAMEWORK_DIR, "cores", "arduino", "stm32", "usb", "hid"),
         join(FRAMEWORK_DIR, "cores", "arduino", "stm32", "usb", "cdc"),
-        join(FRAMEWORK_DIR, "libraries", "SrcWrapper", "src"),
-        join(FRAMEWORK_DIR, "libraries", "SrcWrapper", "src", "stm32"),
         join(FRAMEWORK_DIR, "libraries", "Wire", "src"),
         join(FRAMEWORK_DIR, "libraries", "Wire", "src", "utility"),
         join(FRAMEWORK_DIR, "system", "Drivers",
@@ -275,7 +273,8 @@ if "build.variant" in board:
 
 env.BuildSources(
     join("$BUILD_DIR", "FrameworkArduinoLibraries"),
-    join(FRAMEWORK_DIR, "libraries", "SrcWrapper"))
+    join(FRAMEWORK_DIR, "libraries", "SrcWrapper", "src"),
+    ["+<*>", "-<HAL>"])
 
 env.BuildSources(
     join("$BUILD_DIR", "FrameworkArduino"),
