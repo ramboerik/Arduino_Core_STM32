@@ -185,7 +185,7 @@ env.Append(
              "STM32_USB_Device_Library", "Core", "Inc"),
         join(FRAMEWORK_DIR, "system", "Middlewares", "ST",
              "STM32_USB_Device_Library", "Core", "Src"),
-        join(CMSIS_DIR, "Core", "Include"),
+        join(CMSIS_DIR, "Include"),
         join(FRAMEWORK_DIR, "system", "Drivers", "CMSIS",
              "Device", "ST", series, "Include"),
         join(FRAMEWORK_DIR, "system", "Drivers", "CMSIS",
