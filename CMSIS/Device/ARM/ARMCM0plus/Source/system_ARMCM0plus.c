@@ -37,7 +37,7 @@
   Externals
  *----------------------------------------------------------------------------*/
 #if defined (__VTOR_PRESENT) && (__VTOR_PRESENT == 1U)
-  extern uint32_t __VECTOR_TABLE;
+  extern uint32_t __Vectors;
 #endif
 
 /*----------------------------------------------------------------------------
@@ -61,7 +61,7 @@ void SystemInit (void)
 {
 
 #if defined (__VTOR_PRESENT) && (__VTOR_PRESENT == 1U)
-  SCB->VTOR = (uint32_t) &__VECTOR_TABLE;
+  SCB->VTOR = (uint32_t) &__Vectors;
 #endif
 
   SystemCoreClock = SYSTEM_CLOCK;

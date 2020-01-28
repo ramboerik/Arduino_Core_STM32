@@ -38,7 +38,6 @@
   @{
  */
 
-#if !defined(ARM_DSP_CONFIG_TABLES) || defined(ARM_ALL_FFT_TABLES) || (defined(ARM_TABLE_TWIDDLECOEF_F32_16) && defined(ARM_TABLE_BITREVIDX_FLT_16) && defined(ARM_TABLE_TWIDDLECOEF_F32_16) && defined(ARM_TABLE_TWIDDLECOEF_RFFT_F32_32))
 
 /**
   @brief         Initialization function for the 32pt floating-point real FFT.
@@ -65,9 +64,6 @@ arm_status arm_rfft_32_fast_init_f32( arm_rfft_fast_instance_f32 * S ) {
 
   return ARM_MATH_SUCCESS;
 }
-#endif 
-
-#if !defined(ARM_DSP_CONFIG_TABLES) || defined(ARM_ALL_FFT_TABLES) || (defined(ARM_TABLE_TWIDDLECOEF_F32_32) && defined(ARM_TABLE_BITREVIDX_FLT_32) && defined(ARM_TABLE_TWIDDLECOEF_F32_32) && defined(ARM_TABLE_TWIDDLECOEF_RFFT_F32_64))
 
 /**
   @brief         Initialization function for the 64pt floating-point real FFT.
@@ -94,9 +90,6 @@ arm_status arm_rfft_64_fast_init_f32( arm_rfft_fast_instance_f32 * S ) {
 
   return ARM_MATH_SUCCESS;
 }
-#endif 
-
-#if !defined(ARM_DSP_CONFIG_TABLES) || defined(ARM_ALL_FFT_TABLES) || (defined(ARM_TABLE_TWIDDLECOEF_F32_64) && defined(ARM_TABLE_BITREVIDX_FLT_64) && defined(ARM_TABLE_TWIDDLECOEF_F32_64) && defined(ARM_TABLE_TWIDDLECOEF_RFFT_F32_128))
 
 /**
   @brief         Initialization function for the 128pt floating-point real FFT.
@@ -123,9 +116,6 @@ arm_status arm_rfft_128_fast_init_f32( arm_rfft_fast_instance_f32 * S ) {
 
   return ARM_MATH_SUCCESS;
 }
-#endif 
-
-#if !defined(ARM_DSP_CONFIG_TABLES) || defined(ARM_ALL_FFT_TABLES) || (defined(ARM_TABLE_TWIDDLECOEF_F32_128) && defined(ARM_TABLE_BITREVIDX_FLT_128) && defined(ARM_TABLE_TWIDDLECOEF_F32_128) && defined(ARM_TABLE_TWIDDLECOEF_RFFT_F32_256))
 
 /**
   @brief         Initialization function for the 256pt floating-point real FFT.
@@ -152,9 +142,6 @@ arm_status arm_rfft_256_fast_init_f32( arm_rfft_fast_instance_f32 * S ) {
 
   return ARM_MATH_SUCCESS;
 }
-#endif 
-
-#if !defined(ARM_DSP_CONFIG_TABLES) || defined(ARM_ALL_FFT_TABLES) || (defined(ARM_TABLE_TWIDDLECOEF_F32_256) && defined(ARM_TABLE_BITREVIDX_FLT_256) && defined(ARM_TABLE_TWIDDLECOEF_F32_256) && defined(ARM_TABLE_TWIDDLECOEF_RFFT_F32_512))
 
 /**
   @brief         Initialization function for the 512pt floating-point real FFT.
@@ -181,9 +168,7 @@ arm_status arm_rfft_512_fast_init_f32( arm_rfft_fast_instance_f32 * S ) {
 
   return ARM_MATH_SUCCESS;
 }
-#endif 
 
-#if !defined(ARM_DSP_CONFIG_TABLES) || defined(ARM_ALL_FFT_TABLES) || (defined(ARM_TABLE_TWIDDLECOEF_F32_512) && defined(ARM_TABLE_BITREVIDX_FLT_512) && defined(ARM_TABLE_TWIDDLECOEF_F32_512) && defined(ARM_TABLE_TWIDDLECOEF_RFFT_F32_1024))
 /**
   @brief         Initialization function for the 1024pt floating-point real FFT.
   @param[in,out] S  points to an arm_rfft_fast_instance_f32 structure
@@ -209,9 +194,7 @@ arm_status arm_rfft_1024_fast_init_f32( arm_rfft_fast_instance_f32 * S ) {
 
   return ARM_MATH_SUCCESS;
 }
-#endif
 
-#if !defined(ARM_DSP_CONFIG_TABLES) || defined(ARM_ALL_FFT_TABLES) || (defined(ARM_TABLE_TWIDDLECOEF_F32_1024) && defined(ARM_TABLE_BITREVIDX_FLT_1024) && defined(ARM_TABLE_TWIDDLECOEF_F32_1024) && defined(ARM_TABLE_TWIDDLECOEF_RFFT_F32_2048))
 /**
   @brief         Initialization function for the 2048pt floating-point real FFT.
   @param[in,out] S  points to an arm_rfft_fast_instance_f32 structure
@@ -236,9 +219,7 @@ arm_status arm_rfft_2048_fast_init_f32( arm_rfft_fast_instance_f32 * S ) {
 
   return ARM_MATH_SUCCESS;
 }
-#endif
 
-#if !defined(ARM_DSP_CONFIG_TABLES) || defined(ARM_ALL_FFT_TABLES) || (defined(ARM_TABLE_TWIDDLECOEF_F32_2048) && defined(ARM_TABLE_BITREVIDX_FLT_2048) && defined(ARM_TABLE_TWIDDLECOEF_F32_2048) && defined(ARM_TABLE_TWIDDLECOEF_RFFT_F32_4096))
 /**
 * @brief         Initialization function for the 4096pt floating-point real FFT.
 * @param[in,out] S  points to an arm_rfft_fast_instance_f32 structure
@@ -264,7 +245,6 @@ arm_status arm_rfft_4096_fast_init_f32( arm_rfft_fast_instance_f32 * S ) {
 
   return ARM_MATH_SUCCESS;
 }
-#endif 
 
 /**
   @brief         Initialization function for the floating-point real FFT.
@@ -290,46 +270,30 @@ arm_status arm_rfft_fast_init_f32(
 
   switch (fftLen)
   {
-#if !defined(ARM_DSP_CONFIG_TABLES) || defined(ARM_ALL_FFT_TABLES) || (defined(ARM_TABLE_TWIDDLECOEF_F32_2048) && defined(ARM_TABLE_BITREVIDX_FLT_2048) && defined(ARM_TABLE_TWIDDLECOEF_F32_2048) && defined(ARM_TABLE_TWIDDLECOEF_RFFT_F32_4096))
   case 4096U:
     fptr = arm_rfft_4096_fast_init_f32;
     break;
-#endif
-#if !defined(ARM_DSP_CONFIG_TABLES) || defined(ARM_ALL_FFT_TABLES) || (defined(ARM_TABLE_TWIDDLECOEF_F32_1024) && defined(ARM_TABLE_BITREVIDX_FLT_1024) && defined(ARM_TABLE_TWIDDLECOEF_F32_1024) && defined(ARM_TABLE_TWIDDLECOEF_RFFT_F32_2048))
   case 2048U:
     fptr = arm_rfft_2048_fast_init_f32;
     break;
-#endif
-#if !defined(ARM_DSP_CONFIG_TABLES) || defined(ARM_ALL_FFT_TABLES) || (defined(ARM_TABLE_TWIDDLECOEF_F32_512) && defined(ARM_TABLE_BITREVIDX_FLT_512) && defined(ARM_TABLE_TWIDDLECOEF_F32_512) && defined(ARM_TABLE_TWIDDLECOEF_RFFT_F32_1024))
   case 1024U:
     fptr = arm_rfft_1024_fast_init_f32;
     break;
-#endif
-#if !defined(ARM_DSP_CONFIG_TABLES) || defined(ARM_ALL_FFT_TABLES) || (defined(ARM_TABLE_TWIDDLECOEF_F32_256) && defined(ARM_TABLE_BITREVIDX_FLT_256) && defined(ARM_TABLE_TWIDDLECOEF_F32_256) && defined(ARM_TABLE_TWIDDLECOEF_RFFT_F32_512))
   case 512U:
     fptr = arm_rfft_512_fast_init_f32;
     break;
-#endif
-#if !defined(ARM_DSP_CONFIG_TABLES) || defined(ARM_ALL_FFT_TABLES) || (defined(ARM_TABLE_TWIDDLECOEF_F32_128) && defined(ARM_TABLE_BITREVIDX_FLT_128) && defined(ARM_TABLE_TWIDDLECOEF_F32_128) && defined(ARM_TABLE_TWIDDLECOEF_RFFT_F32_256))
   case 256U:
     fptr = arm_rfft_256_fast_init_f32;
     break;
-#endif
-#if (defined(ARM_TABLE_TWIDDLECOEF_F32_64) && defined(ARM_TABLE_BITREVIDX_FLT_64) && defined(ARM_TABLE_TWIDDLECOEF_F32_64) && defined(ARM_TABLE_TWIDDLECOEF_RFFT_F32_128))
   case 128U:
     fptr = arm_rfft_128_fast_init_f32;
     break;
-#endif
-#if !defined(ARM_DSP_CONFIG_TABLES) || defined(ARM_ALL_FFT_TABLES) || (defined(ARM_TABLE_TWIDDLECOEF_F32_32) && defined(ARM_TABLE_BITREVIDX_FLT_32) && defined(ARM_TABLE_TWIDDLECOEF_F32_32) && defined(ARM_TABLE_TWIDDLECOEF_RFFT_F32_64))
   case 64U:
     fptr = arm_rfft_64_fast_init_f32;
     break;
-#endif
-#if !defined(ARM_DSP_CONFIG_TABLES) || defined(ARM_ALL_FFT_TABLES) || (defined(ARM_TABLE_TWIDDLECOEF_F32_16) && defined(ARM_TABLE_BITREVIDX_FLT_16) && defined(ARM_TABLE_TWIDDLECOEF_F32_16) && defined(ARM_TABLE_TWIDDLECOEF_RFFT_F32_32))
   case 32U:
     fptr = arm_rfft_32_fast_init_f32;
     break;
-#endif
   default:
     return ARM_MATH_ARGUMENT_ERROR;
   }
