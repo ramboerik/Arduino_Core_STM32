@@ -216,7 +216,7 @@ env.Append(
 
     LIBPATH=[
         variant_dir,
-        join(CMSIS_DIR, "DSP", "Lib", "GCC")
+        join(CMSIS_DIR, "Lib", "GCC")
     ]
 )
 
